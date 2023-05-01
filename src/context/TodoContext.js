@@ -13,6 +13,7 @@ const TodoReducer = (state, action) => {
       const updatedTodo = state.todos.filter(
         (todo) => todo.id !== todoToRemove.id
       );
+      console.log(updatedTodo);
       return {
         todos: updatedTodo,
       };
@@ -24,16 +25,7 @@ const TodoReducer = (state, action) => {
 
 export const TodoProvider = ({ children }) => {
   const initialState = {
-    todos: [
-      {
-        id: 1,
-        text: "Make Coffee",
-      },
-      {
-        id: 2,
-        text: "Water Plants",
-      },
-    ],
+    todos: [],
   };
 
   const [state, dispatch] = useReducer(TodoReducer, initialState);
@@ -46,6 +38,7 @@ export const TodoProvider = ({ children }) => {
   };
 
   const removeTodo = (todoToRemove) => {
+    console.log(todoToRemove);
     dispatch({
       type: "todos/removeTodo",
       payload: todoToRemove,

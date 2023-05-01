@@ -10,7 +10,7 @@ import { TodoProvider } from "./context/TodoContext";
 function App() {
   return (
     <TodoProvider>
-      <div className="flex flex-col h-screen justify-between">
+      <div className="flex flex-col h-screen justify-between box-border">
         <Header />
         <TodoInput />
         <TodoList />
